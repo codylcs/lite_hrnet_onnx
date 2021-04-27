@@ -1,7 +1,6 @@
 use mmpose frame to export lite_hrnet onnx model
 
 
-```
 #chanes 1: line86
     def get_avgpool_s_k_sz(self,x):
         outputsz = np.array(x[-1].size()[-2:])
@@ -38,14 +37,12 @@ use mmpose frame to export lite_hrnet onnx model
         
 # changes 2:line30
 
-```
         # self.global_avgpool = nn.AvgPool2d(1)
         self.global_avgpool = nn.AdaptiveAvgPool2d(1)
-```
+
 
 when run pytorchonnx.py,warning will happen,just ignore
 
-```
 Use load_from_local loader
 /home/cody/anaconda3/envs/LiteHRNET/lib/python3.7/site-packages/mmpose/models/backbones/utils/channel_shuffle.py:20: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
   assert (num_channels % groups == 0), ('num_channels should be '
@@ -57,7 +54,4 @@ Successfully exported ONNX model: lite_hr.onnx
 
 Process finished with exit code 0
 
-```
 
-
-'''
